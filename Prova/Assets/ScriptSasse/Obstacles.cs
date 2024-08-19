@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Obstacles : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    PlayerController controller;
+    private void OnTriggerEnter(Collision collision)
     {
-        
+        if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Player")
+        {
+
+            Debug.Log("perdeu");
+            //controller.GameOver();
+        }
     }
 }
